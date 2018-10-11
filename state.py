@@ -63,10 +63,10 @@ class State():
 	def make_move(self, action):
 		if self.name == "b3s3":
 			return self.check_move(action)
-		# if random.random() > self.obeyProb: # Mistake happens
-		# 	return self.check_move(self.get_error_move(action))
-		# else: 
-		return self.check_move(action)
+		if random.random() > self.obeyProb: # Mistake happens
+			return self.check_move(self.get_error_move(action))
+		else: 
+			return self.check_move(action)
 
 	# returns a list of (probability, reward, s') transition tuples
 	def get_transition_probs(self, action):

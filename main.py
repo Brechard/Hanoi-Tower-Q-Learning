@@ -140,10 +140,7 @@ for key,val in q_table.items():
 	result[key] = [moves[best_pos], round(best_value, 2)]
 	plt.plot(q_table_all_values[key][best_pos], label = "State " +key+ " action " +moves[best_pos])
 	plt.xscale('log')
-# plt.legend(handles = lines)
-# print(lines.getLabel())
-plt.legend()
-plt.show()
+
 print()
 for key,val in result.items():
 	print (key, "=>", val)
@@ -152,3 +149,5 @@ print(" ------------------- ")
 print()
 for key,val in times_action_executed.items():
 	print (key, "=>", val)
+plt.legend()
+plt.show()
